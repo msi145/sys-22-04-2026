@@ -1,4 +1,4 @@
-🎓 Отчёт по учебной практике — ПМ04
+Отчёт по учебной практике — ПМ04
 Специальность: 09.02.07 Информационные системы и программирование
 Колледж: Слободской колледж педагогики и социальных отношений
 Студент: Копыльцов Роман Владимирович, группа 23П-1
@@ -19,7 +19,7 @@
 
 
 Стек технологий
-КатегорияТехнологияВерсияВиртуализацияOracle VM VirtualBox7.0+ОС сервернаяUbuntu Server22.04 LTSОС для 1СРед ОСактуальнаяСУБДMongoDB7.0GUI СУБДMongoDB Compass1.42+КонтейнеризацияDocker + Docker Compose26.x / 2.xAPI-сервисFirecrawllatestВеб-серверOpen Server PanelактуальнаяСКВGitLabактуальнаяПлатформа 1С1С:Предприятие8.3NASOpenMediaVaultактуальнаяЯзыкC# / .NET7.0+ТестированиеxUnit—СУБД (приложение)PostgreSQL14+
+КатегорияТехнологияВерсияВиртуализацияOracle VM VirtualBox7.0+ОС сервернаяUbuntu Server22.04 LTSОС для 1СРед ОСактуальнаяСУБДMongoDB7.0GUI СУБДMongoDB Compass1.42+КонтейнеризацияDocker + Docker Compose26.x / 2.xAPI-сервисFirecrawllatestВеб-серверOpen Server PanelактуальнаяСКВGitLabактуальнаяПлатформа 1С1С:Предприятие8.3NASOpenMediaVaultактуальнаяЯзыкC# / .NET7.0+ТестированиеxUnit—
 
 Выполненные работы
 
@@ -91,33 +91,29 @@ bashgit clone http://gitlab.local/username/Championship_1C.git
 
 
 7. Приложение KeeperPro — руководство по установке
-Приложение KeeperPro.Desktop — информационная система учёта расписания (C# / .NET / PostgreSQL / MVVM).
+Приложение KeeperPro.Desktop — информационная система учёта расписания (C# / .NET / MVVM).
 Требования
 
 .NET Desktop Runtime 7.0 или выше (или Self-contained сборка)
-PostgreSQL 14+
 
 Установка
-1. Установить PostgreSQL
-bash# Запустить службу и подключиться через pgAdmin или DBeaver
-# Пользователь: postgres
-2. Инициализировать базу данных
+1. Инициализировать базу данных
 sql-- Создать БД CollegeSchedule
 -- Выполнить migration.sql из папки /Database
 -- Будут созданы таблицы: Rooms, Subjects, Schedule, Users
-3. Настроить подключение
+2. Настроить подключение
 Файл appsettings.json рядом с KeeperPro.Desktop.exe:
 json{
   "ConnectionStrings": {
-    "DefaultConnection": "Host=localhost;Database=CollegeSchedule;Username=postgres;Password=ВАШ_ПАРОЛЬ"
+    "DefaultConnection": "ВАША_СТРОКА_ПОДКЛЮЧЕНИЯ"
   }
 }
-4. Запустить приложение
+3. Запустить приложение
 Дважды кликнуть KeeperPro.Desktop.exe. При первом запуске появится Splash Screen (5 сек), затем — окно авторизации.
 
-Если ошибка подключения — проверьте appsettings.json и статус службы PostgreSQL.
+Если ошибка подключения — проверьте appsettings.json и статус службы БД.
 
-5. Пользовательские настройки
+4. Пользовательские настройки
 Файл настроек (тема оформления и др.) создаётся автоматически в %AppData% при первом запуске. Доступны тёмная и светлая темы.
 
 8. Сравнение операционных систем
@@ -138,5 +134,5 @@ json{
 Написание и прогон юнит-тестов (xUnit, C#/.NET)
 Работа с системами контроля версий (GitLab)
 Администрирование NAS (OpenMediaVault) и веб-серверов (Open Server Panel)
-Разработка desktop-приложения на C# с паттерном MVVM и PostgreSQL
+Разработка desktop-приложения на C# с паттерном MVVM
 Подготовка технической документации и руководств по установке
